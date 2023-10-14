@@ -1,8 +1,8 @@
 {%extends 'catalog/base.html'%}
 
 {%block content%}
-    <h2>Renew: {{bookinst.book.title}}</h2>
-    <h2>Borrower: {{bookinst.borrower}}</h2>
+    <h2>Обновленные: {{bookinst.book.title}}</h2>
+    <h2>Занятые книги: {{bookinst.borrower}}</h2>
     <p {% if bookinst.is_overdue %} class="text-danger" {% endif %} > Due date: {{bookinst.due_back}}</p>
     <br> 
     <form action="" method="post">

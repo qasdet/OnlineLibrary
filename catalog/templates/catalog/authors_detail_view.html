@@ -1,20 +1,18 @@
 {%extends 'catalog/base.html'%}
 {%block content%}
     {% if user.is_staff %}
-        <h4>Change / update the author info: </h4>
-        <li><a href="{% url 'author_update' author.pk %}">Update info about author</a></li>
+        <h4>Изменить / обновить информацию об авторе: </h4>
+        <li><a href="{% url 'author_update' author.pk %}">Обновить информацию об авторе</a></li>
         <br>
-        <li><a href="{% url 'author_delete' author.pk %}">Delete the author</a></li>
+        <li><a href="{% url 'author_delete' author.pk %}">Удалить автора</a></li>
     {% endif %}
     <br>
     <br>
-    <h2> All we know about the author:</h2>
-    <p><strong>First name:   </strong>"{{ author.first_name }}"</p>
-    <p><strong>Last name:    </strong>"{{ author.last_name }}"</p>
-    <p><strong>Date of birth:</strong>"{{ author.date_of_birth }}"</p>
-    <p><strong>Date of death:</strong>"{{ author.date_of_death }}"</p>
+    <h2> Все, что мы знаем об авторе:</h2>
+    <p><strong>Имя:   </strong>"{{ author.first_name }}"</p>
+    <p><strong>Фамилия:    </strong>"{{ author.last_name }}"</p>
+    <p><strong>Дата рождения:</strong>"{{ author.date_of_birth }}"</p>
+    <p><strong>Дата смерти:</strong>"{{ author.date_of_death }}"</p>
     <br>
-    <p>Here should be very interesting story about the author, his happy childhood and everything...
-        don't want to steal it from Wiki.</p>
 {% endblock content %}
 

@@ -2,20 +2,20 @@
 {%block content%}
 
    {% if user.is_staff %}
-      <h4>Change / update the book info: </h4>
-      <li><a href="{% url 'book_update' book.pk %}">Update book info</a></li>
+      <h4>Измените / обновите информацию о книге: </h4>
+      <li><a href="{% url 'book_update' book.pk %}">Обновить информацию о книге</a></li>
       <br>
-      <li><a href="{% url 'book_delete' book.pk %}">Delete the book</a></li>
+      <li><a href="{% url 'book_delete' book.pk %}">Удалите книгу</a></li>
    {% endif %}
    <br>
    <br>
 
-    <h2> Detail view</h2>
-    <h3>Title: "{{ book.title }}"</h3>
-    <p><strong>Genre: </strong>      {{ book.genre }}</p>
-    <p><strong>Annotation: </strong> {{ book.summary }}</p>
+    <h2> Детали</h2>
+    <h3>Название книги: "{{ book.title }}"</h3>
+    <p><strong>Жарн: </strong>      {{ book.genre }}</p>
+    <p><strong>Описание: </strong> {{ book.summary }}</p>
     <p><strong>ISBN: </strong>       {{ book.isbn }}</p>
-    <p><strong>Language: </strong>   {{ book.language }}</p>
+    <p><strong>Язык: </strong>   {{ book.language }}</p>
 
      {% for author in book.author.all %}
         <p><strong>Author:</strong><a href="{% url 'author-detail' author.pk %}">{{ author.first_name }} {{author.last_name}}</a></p>
@@ -25,10 +25,10 @@
     <h4>Books in database ( {{book.bookinstance_set.all.count}} pieces found): </h4>
     <hr>
     {% for copy in book.bookinstance_set.all %}
-       <p><strong>Publisher:</strong> {{copy.imprint}}</p>
-       <p><strong>Inventory number:</strong> {{copy.inv_num}}</p>
-       <p><strong>Status of the book:</strong> {{copy.status}}</p>
-       <p><strong>Arrival date:</strong> {{copy.due_back}}</p>
+       <p><strong>Издатель:</strong> {{copy.imprint}}</p>
+       <p><strong>Инвентарный номер:</strong> {{copy.inv_num}}</p>
+       <p><strong>Статус книги:</strong> {{copy.status}}</p>
+       <p><strong>Дата прибытия:</strong> {{copy.due_back}}</p>
        <hr>
     {% endfor %}
 
